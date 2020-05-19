@@ -98,7 +98,7 @@
         <p>{{ .description | markdownify }}</p>
       </div>
     </div>
-    <div class="row">
+    <div class="row">  <!-- 
       <div class="col-md-6">
         <div class="block">
           <ul class="counter-box clearfix">
@@ -111,8 +111,8 @@
             {{ end }}
           </ul>
         </div>
-      </div>
-      <div class="col-md-5 col-md-offset-1">
+      </div> --> 
+      <div class="col-md-12">
         <div class="testimonial-carousel text-center">
           <div class="testimonial-slider owl-carousel">
             {{ range .testimonial_slider }}
@@ -120,8 +120,8 @@
               <i class="ion-quote"></i>
               <p>"{{ .content | markdownify }}"</p>
               <div class="user">
-                <img src="{{ .image | relURL }}" alt="client">
-                <p><span>{{ .name | markdownify }}</span> {{ .designation | markdownify }}</p>
+                <a href="{{ .url }}"><img src="{{ .image | relURL }}" alt="client"></a>
+                <p><span>{{ .name | markdownify }}</span></p>
               </div>
             </div>
             {{ end }}
