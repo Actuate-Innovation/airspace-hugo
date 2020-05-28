@@ -24,24 +24,13 @@
         {{ end }}
       </div>
     </div>
-    <div class="row counter-box text-center mt-50">
-      {{ range .funfacts }}
-      <div class="col-md-2">
-        <div class="counter-item">
-          <i class="{{ .icon }}"></i>
-          <h4 class="count" data-count="{{ .count }}">0</h4>
-          <span>{{ .name }}</span>
-        </div>
-      </div>
-      {{ end }}
-    </div>
   </div>
 </section>
 {{ end }}
 {{ end }}
 
-{{ if $data.about.features.enable }}
-{{ with $data.about.features }}
+{{ if $data.about.who.enable }}
+{{ with $data.about.who }}
 <section class="about-feature bg-dark section dark-service">
   <div class="container">
     {{ with .title }}
@@ -54,12 +43,36 @@
     </div>
     {{ end }}
     <div class="row">
-      {{ range .feature_item }}
+      {{ range .people }}
       <div class="col-md-4">
-        <div class="service-item">
-          <i class="{{ .icon }}"></i>
+        <div class="user">
+          <img src="{{ .image | relURL }}" alt="client">
           <h4>{{ .name | markdownify }}</h4>
           <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+
+
+{{ if $data.about.sponsorship.enable }}
+{{ with $data.about.sponsorship }}
+<section class="sponsorship section">
+  <div class="container">
+    <div class="row counter-box text-center mt-50">
+      <div class="col-md-12">
+        <h2 class="mt-40">{{ .title | markdownify }}</h2>
+      </div>
+    </div>
+    <div class="row counter-box text-center mt-50">
+      {{ range .sponsors }}
+      <div class="col-md-4">
+        <div class="user">
+          <img src="{{ .image | relURL }}" alt="client">
         </div>
       </div>
       {{ end }}
