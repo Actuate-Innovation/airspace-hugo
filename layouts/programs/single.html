@@ -9,14 +9,16 @@
 <section class="portfolio-single-page section-sm">
   <div class="container">
     <div class="row col-md-12">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <img class="img-responsive w-100" src="{{ .Params.Diagram | relURL }}" alt="">
       </div>
+    </div>
       
+    <div class="row col-md-12">
     {{ range $i, $e := $cols }}
     {{ $offset := mod $i 2 | add 1 }}
       
-    {{ if eq $offset 2 }}
+    {{ if eq $offset 1 }}
     </div>
     <div class="row col-md-12">
     {{ end }}
