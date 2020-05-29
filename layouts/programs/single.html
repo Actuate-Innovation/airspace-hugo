@@ -4,36 +4,26 @@
 
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
+{{ $cols := split .Content "<section>" }}
+
 <section class="portfolio-single-page section-sm">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2>{{ .Params.Problem }}</h2>
-      </div>
-    </div>
-    <div class="row">
-      <!-- <div class="col-md-4">
-        <div class="project-details">
-          <h4>Project Details</h4>
-          <ul>
-            {{ range .Params.Information }}
-            <li><span>{{ .label }} :</span> <strong>{{ .info | markdownify }}</strong></li>
-            {{ end }}
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row"> -->
-      <div class="col-md-7">
-        <div class="project-content mt-50">
-          <h4>{{ .Params.Objective }}</h4>
-          {{ .Content }}
-        </div>
-      </div>
-      <div class="col-md-5">
+    <div class="row col-md-12">
+      <div class="col-md-6">
         <img class="img-responsive w-100" src="{{ .Params.Diagram | relURL }}" alt="">
       </div>
+      
+    {{ range $i, $e := $cols }}
+    {{ $offset := mod $i 2 | add 1 }}
+      
+    {{ if eq $offset 2 }}
     </div>
+    <div class="row col-md-12">
+    {{ end }}
+      <div class="col-md-6">
+        {{ $e | markdownify }}
+      </div>
+    {{ end }}
   </div>
 </section>
 
