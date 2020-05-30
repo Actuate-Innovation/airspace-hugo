@@ -1,5 +1,9 @@
 .about{
-	.block{
+    .vertical-align {
+        display: flex;
+        align-items: center;
+    }
+    .block{
 		
 		h2{
 			padding-top: 35px;
@@ -10,7 +14,7 @@
 			line-height:28px;
 		}
 		img{
-			width: 100%;
+		    width: 100%;
 		}
 	}
 	.about-img {
