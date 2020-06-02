@@ -31,11 +31,14 @@
             <div class="col-md-4 portfolio-item shuffle-item" data-groups="[&quot;{{ .Params.Category | urlize }}&quot;]">
               <img src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
               <div class="portfolio-hover" style="visibility: visible; opacity: 1;">
+                <a class="h3" href="{{ .Permalink }}">
                 <div class="portfolio-content">
                   <!-- <a href="{{ .Params.Image | relURL }}" class="portfolio-popup"><i class="icon ion-search"></i></a> -->
-                  <a class="h3" href="{{ .Permalink }}">{{ .Title }}</a>
+                  <!-- <a class="h3" href="{{ .Permalink }}">{{ .Title }}</a> -->
+                  <h3>{{ .Title }}</h3>
                   <p>{{ .Params.Description }}</p>
                 </div>
+                </a>
               </div>
             </div>
             {{ end }}
