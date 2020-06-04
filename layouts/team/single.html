@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<section class="portfolio-single-page section-sm">
+  <div class="container">
+    <div class="row col-md-12">
+      <div class="col-md-4">
+        <img class="img-responsive w-100" src="{{ .Params.Image | relURL }}" alt="">
+      </div>
+      <div class="col-md-8">
+        <!-- <h4>{{ .Params.Title | markdownify }}</h4>
+        <h5>{{ .Params.Description | markdownify }}</h5> -->
+        {{ .Content | markdownify }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

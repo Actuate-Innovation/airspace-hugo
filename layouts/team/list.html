@@ -30,34 +30,24 @@
 {{ end }}
 
 {{ if $data.team.who.enable }}
-{{ with $data.team.who }}
 <section class="about-feature section service">
   <div class="container">
-    {{ with .title }}
     <div class="row">
-      <div class="col-md-12">
-        <div class="title">
-          <h2>{{ . | markdownify }}</h2>
-        </div>
-      </div>
-    </div>
-    {{ end }}
-    <div class="row">
-      {{ range .people }}
+      {{ range .Data.Pages }}
       <div class="col-md-4">
-        <div class="service-item">
-          <img src="{{ .image | relURL }}" alt="client">
-          <h4>{{ .name | markdownify }}</h4>
-          <h5>{{ .title | markdownify }}</h5>
-          <p>{{ .content | markdownify }}</p>
-          <p><br><span><em>'{{ .quote | markdownify }}'</em></span></p>
-        </div>
+        <a href="{{ .Permalink }}">
+          <div class="service-item">
+            <img src="{{ .Params.Image | relURL }}" alt="client">
+            <h4>{{ .Params.Title | markdownify }}</h4>
+            <h5>{{ .Params.Description | markdownify }}</h5>
+            <p><br><span><em>'{{ .Params.Quote | markdownify }}'</em></span></p>
+          </div>
+        </a>
       </div>
       {{ end }}
     </div>
   </div>
 </section>
-{{ end }}
 {{ end }}
 
 
