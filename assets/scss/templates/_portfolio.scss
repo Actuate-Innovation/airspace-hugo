@@ -27,6 +27,8 @@
 }
 
 .portfolio {
+    .vertical-align {
+    }    
 	&-item {
 		position: relative;
 		padding: 0;
@@ -62,11 +64,15 @@
 	}
 
 	&-content {
-		position: absolute;
+            display: flex;
+            align-items: center;
+            
+		//position: absolute;
 		left: 0;
 		right: 0;
-		top: 50%;
-		transform: translateY(-40%);
+		//top: 50%;
+                height: 100%;
+		//transform: translateY(-40%);
 		text-align: center;
 		padding: 20px;
 		transition: inherit;
